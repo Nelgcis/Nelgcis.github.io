@@ -1,13 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BPT</title>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>扁平头实验室</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900">
+    <link rel="stylesheet" href="bkgStyle.css"/>
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            securityJsCode:'df1f983c3ebc8cc775a7eee0b9badf47',
+        }
+    </script>
+    <script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.4.15&key=d5c95d0ecf90437341677b06888a405e&plugin=AMap.LineSearch"></script>
+    <!--<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>-->
 </head>
 <body>
     
+<div id="container">
+    <div class="heading1"><div id="bus_id">178</div><div id="station_name">大料游乐园<br>太平间</div><div class="tool_box"></div></div>
+    <div class="line_info">
+        <table id="li_table" border="0">
+            <tr>
+              <td class="tag"><div>车队</div></td>
+              <td class="tag_info"><div>&nbsp;&nbsp;这里用来test的进行</div></td>
+              <td class="tag"><div>生日</div></td>
+              <td class="tag_info"><div>-</div></td>
+            </tr>
+            <tr>
+              <td class="tag"><div>计价里程</div></td>
+              <td class="tag_info"><div>-</div></td>
+              <td class="tag"><div>目前配车</div></td>
+              <td class="tag_info"><div>&nbsp;&nbsp;这里用来test的进行</div></td>
+            </tr>
+            <tr>
+              <td class="tag"><div>性别</div></td>
+              <td class="tag_info"><div>&nbsp;&nbsp;这里用来test的进行</div></td>
+              <td class="tag"><div>代表色</div></td>
+              <td class="tag_info_color"><div>#912BD5</div></td>
+            </tr>
+        </table>
+    </div>
+    <div id="bkg">
+    </div>
+</div>
+<script language="javascript">
+    /*
+     * 该示例主要流程分为三个步骤
+     * 1. 首先调用公交路线查询服务(lineSearch)
+     * 2. 根据返回结果解析，输出解析结果(lineSearch_Callback)
+     * 3. 在地图上绘制公交线路()
+     */
+    var map = new AMap.Map("bkg", {
+        resizeEnable: true,
+        showLabel: false, //不显示地图文字标记
+        center: [116.397428, 39.90923],//地图中心点
+        zoom: 15, //地图显示的缩放级别
+        scrollWheel: false, //否可通过鼠标滚轮缩放浏览
+        touchZoom: false, //在移动终端上是否可通过多点触控缩放浏览地图
+        dragEnable: false,
+        zoomEnable: false,
+        doubleClickZoom: false,
+        keyboardEnable: false,
+
+        mapStyle:'amap://styles/58a81ae6305a1d96bc4a943c5c7d3470'
+    });
+    /*公交线路查询*/
+    function lineSearch() {
+        //实例化公交线路查询类，只取回一条路线
+        var linesearch = new AMap.LineSearch({
+            pageIndex: 1,
+            city: '北京',
+            pageSize: 1,
+            extensions: 'all'
+        });
+        //搜索“536”相关公交线路
+        linesearch.search('400', function(status, result) {
+            if (status === 'complete' && result.info === 'OK') {
+                lineSearch_Callback(result);
+            } else {
+                alert(result);
+            }
+        });
+    }
+    /*公交路线查询服务返回数据解析概况*/
+    function lineSearch_Callback(data) {
+        var lineArr = data.lineInfo;
+        var lineNum = data.lineInfo.length;
+        if (lineNum == 0) {
+        } else {
+            for (var i = 0; i < lineNum; i++) {
+                var pathArr = lineArr[i].path;
+                var stops = lineArr[i].via_stops;
+                var startPot = stops[0].location;
+                var endPot = stops[stops.length - 1].location;
+
+                if (i == 0) drawbusLine(startPot, endPot, pathArr);
+            }
+        }
+    }
+    /*绘制路线*/
+    function drawbusLine(startPot, endPot, BusArr) {
+        //绘制起点，终点
+        new AMap.Marker({
+            map: map,
+            position: [startPot.lng, startPot.lat], //基点位置
+            //icon: "http://webapi.amap.com/theme/v1.3/markers/n/start.png",
+            zIndex: 10
+        });
+        new AMap.Marker({
+            map: map,
+            position: [endPot.lng, endPot.lat], //基点位置
+            //icon: "http://webapi.amap.com/theme/v1.3/markers/n/end.png",
+            zIndex: 10
+        });
+        //绘制乘车的路线
+        busPolyline = new AMap.Polyline({
+            map: map,
+            path: BusArr,
+            strokeColor: "#912BD5",//线颜色*******************
+            strokeOpacity: 0.8,//线透明度
+            strokeWeight: 6//线宽
+        });
+        map.setFitView();
+    }
+    lineSearch();
+</script>
 </body>
-</html>
+</html>     

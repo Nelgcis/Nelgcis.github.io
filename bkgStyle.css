@@ -18,6 +18,17 @@ html, body {
 	margin-bottom: 40px;
 }
 
+#line_img {
+	position: absolute;
+	top: -1%;
+	right: 4%;
+	width: 25%;
+}
+
+#line_img img {
+	width: 100%;
+}
+
 #bkg {
 	margin-left: 16%;
 	margin-right: 30%;

@@ -8,7 +8,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900">
     <link rel="stylesheet" href="bkgStyle.css"/>
     <script type="text/javascript">
+        window.forceWebGL = true
         window._AMapSecurityConfig = {
+            serviceHost:'185.199.109.153/_AMapService',  
+            // 例如 ：serviceHost:'http://1.1.1.1:80/_AMapService',
+        }
+    </script>
+    <script src="https://webapi.amap.com/loader.js"></script>
+    
+    <script type="text/javascript">
+            window._AMapSecurityConfig = {
             securityJsCode:'df1f983c3ebc8cc775a7eee0b9badf47',
         }
     </script>

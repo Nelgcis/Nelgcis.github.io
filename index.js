@@ -4,7 +4,7 @@ function randomID(){
     for(var i=0; i<100; i++)
     {
         linesearch.search(bus_id, function(status, result) {
-                if (status === 'complete' && result.info === 'OK') {
+                if (status === 'complete') {
                     return bus_id.toString();
                 } else {
                     bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
@@ -33,7 +33,7 @@ AMapLoader.load({
         zoom: 15, //地图显示的缩放级别
         scrollWheel: false, //否可通过鼠标滚轮缩放浏览
         touchZoom: false, //在移动终端上是否可通过多点触控缩放浏览地图
-        dragEnable: false,
+        dragEnable: true,
         zoomEnable: false,
         doubleClickZoom: false,
         keyboardEnable: false,
@@ -50,7 +50,7 @@ AMapLoader.load({
             extensions: 'all'
         });
         //搜索“536”相关公交线路
-        linesearch.search("111", function(status, result) {
+        linesearch.search(randomID(), function(status, result) {
             if (status === 'complete' && result.info === 'OK') {
                 lineSearch_Callback(result);
             } else {

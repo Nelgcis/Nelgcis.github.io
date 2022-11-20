@@ -7,7 +7,8 @@ function randomID(){
                 if (status === 'complete') {
                     return bus_id.toString();
                 } else {
-                    bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
+                    //bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
+                    return '111';
                 }
         })
     }

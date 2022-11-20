@@ -20,9 +20,9 @@ html, body {
 
 #line_img {
 	position: absolute;
-	top: -1%;
-	right: 4%;
-	width: 25%;
+	top: 0%;
+	right: 2%;
+	width: 28%;
 }
 
 #line_img img {

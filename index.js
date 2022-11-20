@@ -1,5 +1,6 @@
 function randomID(){
     let bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
+    document.getElementById("heading_1a").innerHTML = bus_id.toString();
     for(var i=0; i<100; i++)
     {
         linesearch.search(bus_id, function(status, result) {

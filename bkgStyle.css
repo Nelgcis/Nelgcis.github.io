@@ -30,8 +30,8 @@ html, body {
 }
 
 #bkg {
-	margin-left: 16%;
-	margin-right: 30%;
+	margin-left: 10%;
+	margin-right: 36%;
 	margin-bottom: 6%;
 	margin-top: 2%;
     width: 54%;
@@ -44,8 +44,8 @@ html, body {
 }
 
 .heading1 {
-	margin-left: 16%;
-	margin-right: 30%;
+	margin-left: 10%;
+	margin-right: 36%;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	width: 54%;
@@ -94,8 +94,8 @@ html, body {
 }
 
 .line_info table{
-	margin-left: 16%;
-	margin-right: 25%;
+	margin-left: 10%;
+	margin-right: 31%;
 	width: 54%;
 	height: 150px;
 }

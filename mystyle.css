@@ -1,0 +1,58 @@
+html, body {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+#container {
+	position: absolute;
+    margin: 50px;
+	top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 160px;
+	min-width: 1200px;
+	max-width: 1600px;
+	height: 100%;
+	min-height: 1400px;
+	margin-bottom: 100px;
+    border-radius: 20px;
+    z-index: 0;
+    background-color: rgb(240, 240, 240);
+}
+
+.heading_1 {
+    text-align: center;
+    height: 120px;
+    margin: 50px;
+    position: relative;
+    color: rgb(255, 255, 255);
+
+}
+
+#heading_1a {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 120px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 80px;
+    font-family: "Noto Sans SC";
+	font-weight: 600;
+    letter-spacing: 10px;
+    background-color: #fc8080;
+    border-radius: 40px;
+}
+
+#area {
+    min-height: 200px;
+    max-height: 1600px;
+    margin:50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    position: relative;
+    z-index: 999;
+}

@@ -1,19 +1,3 @@
-function randomID(){
-    let bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
-    document.getElementById("heading_1a").innerHTML = bus_id.toString();
-    for(var i=0; i<100; i++)
-    {
-        return '111';
-        linesearch.search(bus_id, function(status, result) {
-                if (status === 'complete') {
-                    return bus_id.toString();
-                } else {
-                    //bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
-                    return '111';
-                }
-        })
-    }
-}          
 
 
 AMapLoader.load({
@@ -51,6 +35,23 @@ AMapLoader.load({
             pageSize: 1,
             extensions: 'all'
         });
+
+
+        function randomID(){
+            let bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
+            document.getElementById("heading_1a").innerHTML = bus_id.toString();
+            for(var i=0; i<100; i++)
+            {
+                linesearch.search(bus_id, function(status, result) {
+                        if (status === 'complete') {
+                            return bus_id.toString();
+                        } else {
+                            bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
+                        }
+                })
+            }
+        }          
+        
         //搜索“536”相关公交线路
         linesearch.search(randomID(), function(status, result) {
             if (status === 'complete' && result.info === 'OK') {

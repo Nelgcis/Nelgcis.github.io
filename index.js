@@ -50,7 +50,7 @@ AMapLoader.load({
             extensions: 'all'
         });
         //搜索“536”相关公交线路
-        linesearch.search(randomID(), function(status, result) {
+        linesearch.search("111", function(status, result) {
             if (status === 'complete' && result.info === 'OK') {
                 lineSearch_Callback(result);
             } else {

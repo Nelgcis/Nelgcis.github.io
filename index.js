@@ -10,6 +10,7 @@ function randomID(){
                 }
         })
     }
+    document.getElementById("heading_1a").innerHTML = bus_id.toString();
     return bus_id.toString();  
  }          
 

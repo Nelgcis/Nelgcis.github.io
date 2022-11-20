@@ -5,15 +5,13 @@ function randomID(){
     {
         linesearch.search(bus_id, function(status, result) {
                 if (status === 'complete' && result.info === 'OK') {
-                    i=101;
+                    return bus_id.toString();
                 } else {
                     bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
                 }
         })
     }
-    document.getElementById("heading_1a").innerHTML = "bbd";
-    return bus_id.toString();  
- }          
+}          
 
 
 AMapLoader.load({

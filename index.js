@@ -3,6 +3,7 @@ function randomID(){
     document.getElementById("heading_1a").innerHTML = bus_id.toString();
     for(var i=0; i<100; i++)
     {
+        return '111';
         linesearch.search(bus_id, function(status, result) {
                 if (status === 'complete') {
                     return bus_id.toString();

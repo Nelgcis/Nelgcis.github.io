@@ -47,7 +47,7 @@ html, body {
     border-radius: 40px;
 }
 
-#area {
+.area {
     min-height: 200px;
     max-height: 1600px;
     margin:50px;

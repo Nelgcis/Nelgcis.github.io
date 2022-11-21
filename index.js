@@ -37,12 +37,12 @@ AMapLoader.load({
         });
 
         let bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
-        var bus_id_ok = "1";
+        var bus_id_ok = "8";
         document.getElementById("heading_1a").innerHTML = bus_id.toString();
         for(var i=0; i<100; i++)
             {
                 linesearch.search(bus_id, function(status, result) {
-                        if (status === 'complete') {
+                        if (status === 'complete' && result.info === 'OK') {
                             bus_id_ok = bus_id.toString();
                             i=101;
                         } else {

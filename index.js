@@ -37,22 +37,23 @@ AMapLoader.load({
         });
 
         let bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
-        function randomID(id){
-            document.getElementById("heading_1a").innerHTML = id.toString();
-            for(var i=0; i<100; i++)
+        var bus_id_ok = "1";
+        document.getElementById("heading_1a").innerHTML = bus_id.toString();
+        for(var i=0; i<100; i++)
             {
-                linesearch.search(id, function(status, result) {
+                linesearch.search(bus_id, function(status, result) {
                         if (status === 'complete') {
-                            return id.toString();
+                            bus_id_ok = bus_id.toString();
+                            i=101;
                         } else {
-                            id = Math.floor(Math.random() * (999 - 1)) + 1;
+                            bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
                         }
                 })
             }
-        }          
+                
         
         //搜索“536”相关公交线路
-        linesearch.search(randomID(bus_id), function(status, result) {
+        linesearch.search(bus_id_ok, function(status, result) {
             if (status === 'complete' && result.info === 'OK') {
                 lineSearch_Callback(result);
             } else {
@@ -60,6 +61,7 @@ AMapLoader.load({
             }
         });
     }
+    
     /*公交路线查询服务返回数据解析概况*/
     function lineSearch_Callback(data) {
         var lineArr = data.lineInfo;

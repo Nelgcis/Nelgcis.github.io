@@ -37,10 +37,11 @@ AMapLoader.load({
         });
 
         let bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
+        while(bus_id>=146 && bus_id<300 || bus_id>=699 && bus_id<801){bus_id = Math.floor(Math.random() * (999 - 1)) + 1;}
         var bus_id_ok = "8";
         bus_id_ok = bus_id.toString()+'路';
         document.getElementById("heading_1a").innerHTML = bus_id.toString();
-        for(var i=0; i<100; i++)
+        /*for(var i=0; i<100; i++)
             {
                 document.getElementById("heading_1a").innerHTML = bus_id.toString();
                 linesearch.search(bus_id.toString()+'路', function(status, result) {
@@ -52,6 +53,7 @@ AMapLoader.load({
                         }
                 })
             }
+        */
                 
         
         //搜索“536”相关公交线路

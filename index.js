@@ -85,7 +85,7 @@ AMapLoader.load({
     /*绘制路线*/
     function drawbusLine(startPot, endPot, BusArr) {
         //绘制起点，终点
-        new AMap.Marker({
+        /*new AMap.Marker({
             map: map,
             position: [startPot.lng, startPot.lat], //基点位置
             //icon: "http://webapi.amap.com/theme/v1.3/markers/n/start.png",
@@ -96,13 +96,13 @@ AMapLoader.load({
             position: [endPot.lng, endPot.lat], //基点位置
             //icon: "http://webapi.amap.com/theme/v1.3/markers/n/end.png",
             zIndex: 10
-        });
+        });*/
         //绘制乘车的路线
         busPolyline = new AMap.Polyline({
             map: map,
             path: BusArr,
-            strokeColor: "#912BD5",//线颜色*******************
-            strokeOpacity: 0.8,//线透明度
+            strokeColor: "#FC8080",//线颜色*******************
+            strokeOpacity: 0.5,//线透明度
             strokeWeight: 6//线宽
         });
         map.setFitView();

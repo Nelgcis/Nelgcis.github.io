@@ -26,7 +26,14 @@ html, body {
     margin: 50px;
     position: relative;
     color: rgb(255, 255, 255);
-    z-index: 999;
+}
+
+#heading_bkg {
+    height: 300px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px 20px 0 0;
+    position: relative;
 }
 
 #heading_1a {
@@ -43,6 +50,8 @@ html, body {
     letter-spacing: 10px;
     background-color: #fc8080;
     border-radius: 40px;
+    position: relative;
+    z-index: 999;
 }
 
 .map {
@@ -55,7 +64,7 @@ html, body {
     max-height: 1600px;
     margin:50px;
     margin-left: 100px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 20px;
     position: relative;
     z-index: 999;

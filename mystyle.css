@@ -77,6 +77,16 @@ html, body {
     left: -60px;
 }
 
+.qqHead {
+    margin: 20px 50px;
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+    border: 5px solid;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+
 .button-group {
 	position: absolute;
 	bottom: 20px;
@@ -189,12 +199,22 @@ html, body {
 
 
 
-#k1 {background-color: rgba(120, 195, 255, 0.6);}
-#k2 {background-color: rgba(248, 200, 74, 0.6);}
-#k3 {background-color: rgba(194, 138, 255, 0.6);}
-#k4 {background-color: rgba(101, 211, 57, 0.6);}
-#k5 {background-color: rgba(131, 201, 199, 0.6);}
-#k6 {background-color: rgba(222, 173, 138, 0.6);}
-#k7 {background-color: rgba(107, 230, 197, 0.6);}
-#k8 {background-color: rgba(255, 143, 193, 0.6);}
-#dk {background-color: rgba(255, 227, 41, 0.6);}
+#k1 h1 {background-color: rgba(120, 195, 255, 0.6); border-color: rgba(120, 195, 255, 0.6);}
+#k2 h1 {background-color: rgba(248, 200, 74, 0.6); border-color: rgba(248, 200, 74, 0.6);}
+#k3 h1{background-color: rgba(194, 138, 255, 0.6); border-color: rgba(194, 138, 255, 0.6);}
+#k4 h1 {background-color: rgba(101, 211, 57, 0.6); border-color: rgba(101, 211, 57, 0.6);}
+#k5 h1 {background-color: rgba(131, 201, 199, 0.6); border-color: rgba(131, 201, 199, 0.6);}
+#k6 h1 {background-color: rgba(222, 173, 138, 0.6); border-color: rgba(222, 173, 138, 0.6);}
+#k7 h1 {background-color: rgba(107, 230, 197, 0.6); border-color: rgba(107, 230, 197, 0.6);}
+#k8 h1 {background-color: rgba(255, 143, 193, 0.6); border-color: rgba(255, 143, 193, 0.6);}
+#dk h1 {background-color: rgba(255, 227, 41, 0.6); border-color: rgba(255, 227, 41, 0.6);}
+
+#k1 a img {background-color: rgba(255, 255, 255, 0.4); border-color: rgba(120, 195, 255, 0.6);}
+#k2 a {background-color: rgba(255, 255, 255, 0.4); border-color: rgba(248, 200, 74, 0.6);}
+#k3 a {background-color: rgba(255, 255, 255, 0.4); border-color: rgba(194, 138, 255, 0.6);}
+#k4 a {background-color: rgba(255, 255, 255, 0.4); border-color: rgba(101, 211, 57, 0.6);}
+#k5 a {background-color: rgba(255, 255, 255, 0.4); border-color: rgba(131, 201, 199, 0.6);}
+#k6 a {background-color: rgba(255, 255, 255, 0.4); border-color: rgba(222, 173, 138, 0.6);}
+#k7 a {background-color: rgba(255, 255, 255, 0.4); border-color: rgba(107, 230, 197, 0.6);}
+#k8 a {background-color: rgba(255, 255, 255, 0.4); border-color: rgba(255, 143, 193, 0.6);}
+#dk a {background-color: rgba(255, 255, 255, 0.4); border-color: rgba(255, 227, 41, 0.6);}

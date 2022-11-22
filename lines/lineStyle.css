@@ -37,7 +37,7 @@ html, body {
     min-height: 700px;
 	border-radius: 5%;
     position: relative;
-    background-color:rgba(0,0,0,0.1);
+    background-color:rgb(238, 238, 238);
     z-index: 0;
 }
 

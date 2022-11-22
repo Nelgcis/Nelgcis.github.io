@@ -41,7 +41,7 @@ AMapLoader.load({
         var bus_id_ok = "8";
         bus_id_ok = bus_id.toString()+'路';
         document.getElementById("heading_1a").innerHTML = bus_id.toString();
-        /*for(var i=0; i<100; i++)
+        for(var i=0; i<100; i++)
             {
                 document.getElementById("heading_1a").innerHTML = bus_id.toString();
                 linesearch.search(bus_id.toString()+'路', function(status, result) {
@@ -53,7 +53,7 @@ AMapLoader.load({
                         }
                 })
             }
-        */
+        
                 
         
         //搜索“536”相关公交线路
@@ -76,8 +76,9 @@ AMapLoader.load({
                 var pathArr = lineArr[i].path;
                 var stops = lineArr[i].via_stops;
                 var startPot = stops[0].location;
+                var startName = stops[0].name;
                 var endPot = stops[stops.length - 1].location;
-
+                console.log(startName);
                 if (i == 0) drawbusLine(startPot, endPot, pathArr);
             }
         }
@@ -102,7 +103,7 @@ AMapLoader.load({
             map: map,
             path: BusArr,
             strokeColor: "#FC8080",//线颜色*******************
-            strokeOpacity: 0.5,//线透明度
+            strokeOpacity: 0.9,//线透明度
             strokeWeight: 6//线宽
         });
         map.setFitView();

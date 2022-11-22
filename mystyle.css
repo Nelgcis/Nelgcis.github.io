@@ -28,6 +28,10 @@ html, body {
     color: rgb(255, 255, 255);
 }
 
+.heading_1 p {
+    color: #666666;
+}
+
 #heading_bkg {
     height: 300px;
     width: 100%;
@@ -42,7 +46,7 @@ html, body {
     margin-right: auto;
     height: 120px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 55px;
     text-align: center;
     font-size: 80px;
     font-family: "Noto Sans SC";

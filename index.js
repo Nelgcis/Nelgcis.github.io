@@ -61,6 +61,7 @@ AMapLoader.load({
             if (status === 'complete' && result.info === 'OK') {
                 lineInfo = result.lineInfo[0];
                 console.log(lineInfo.company);
+                document.getElementById("station_tag").innerHTML = lineInfo.start_stop + " -> " + lineInfo.end_stop + " from " + lineInfo.stime + " to " + lineInfo.etime;
                 lineSearch_Callback(result);
             } else {
                 alert(result);

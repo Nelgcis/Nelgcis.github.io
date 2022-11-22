@@ -38,6 +38,7 @@ AMapLoader.load({
         //搜索“536”相关公交线路
         linesearch.search(bID, function(status, result) {
             if (status === 'complete' && result.info === 'OK') {
+                lineInfo = result.lineInfo[0];
                 document.getElementById("station_name").innerHTML = lineInfo.start_stop + "\n" + lineInfo.end_stop;
                 document.getElementById("distance").innerHTML = lineInfo.distance.toString() + "km";
                 lineSearch_Callback(result);

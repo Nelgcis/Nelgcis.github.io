@@ -29,7 +29,7 @@ html, body {
 	width: 100%;
 }
 
-#bkg {
+#bkg_bkg {
 	margin-left: 10%;
 	margin-right: 36%;
 	margin-bottom: 6%;
@@ -143,11 +143,14 @@ html, body {
 
 .information {
     width: 80%;
-    left: 20%;
-    right: auto;
-    margin: 40px,10px,40px,10px;
-    font-size: 1.3em;
-    font-family: SimSun;
+    left: 10%;
+    top: 40px;
+    font-size: 1.2em;
+    font-family: NSimSun;
+    font-weight: 300;
+    line-height: 1.8em;
+    letter-spacing: 0;
+    position: relative;
 }
 
 

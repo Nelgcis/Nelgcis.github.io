@@ -12,7 +12,7 @@ AMapLoader.load({
         "version": '2.0'  // Loca 版本
     },
 }).then((AMap)=>{
-    var map = new AMap.Map("bkg", {
+    var map = new AMap.Map("bkg_bkg", {
         resizeEnable: true,
         showLabel: false, //不显示地图文字标记
         center: [116.397428, 39.90923],//地图中心点

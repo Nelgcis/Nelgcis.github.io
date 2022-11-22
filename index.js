@@ -54,17 +54,21 @@ AMapLoader.load({
                 })
             }
         
-                
+        var lineInfo;        
         
         //搜索“536”相关公交线路
         linesearch.search(bus_id_ok, function(status, result) {
             if (status === 'complete' && result.info === 'OK') {
+                lineInfo = result.lineInfo[0];
+                console.log(lineInfo.company);
                 lineSearch_Callback(result);
             } else {
                 alert(result);
             }
         });
     }
+
+
     
     /*公交路线查询服务返回数据解析概况*/
     function lineSearch_Callback(data) {

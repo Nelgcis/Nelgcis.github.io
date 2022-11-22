@@ -41,7 +41,7 @@ AMapLoader.load({
                 lineInfo = result.lineInfo[0];
                 document.getElementById("startStation").innerHTML = lineInfo.start_stop;
                 document.getElementById("endStation").innerHTML = lineInfo.end_stop;
-                document.getElementById("distance").innerHTML = lineInfo.distance.toString() + "km";
+                document.getElementById("distance").innerHTML = "&nbsp;&nbsp;" + lineInfo.distance.toString() + "km";
                 lineSearch_Callback(result);
             } else {
                 alert(result);
@@ -64,6 +64,9 @@ AMapLoader.load({
             }
         }
     }
+
+    var line_color = document.getElementById("tag_info_c").innerHTML;
+
     /*绘制路线*/
     function drawbusLine(startPot, endPot, BusArr) {
         //绘制起点，终点
@@ -83,7 +86,7 @@ AMapLoader.load({
         busPolyline = new AMap.Polyline({
             map: map,
             path: BusArr,
-            strokeColor: "#912BD5",//线颜色*******************
+            strokeColor: line_color,//线颜色*******************
             strokeOpacity: 0.8,//线透明度
             strokeWeight: 6//线宽
         });

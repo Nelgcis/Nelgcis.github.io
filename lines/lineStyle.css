@@ -38,8 +38,7 @@ html, body {
     min-height: 700px;
 	border-radius: 5%;
     position: relative;
-    background-color:#b6b6b6;
-    opacity: 0.3;
+    background-color:rgba(0,0,0,0.1);
     z-index: 0;
 }
 
@@ -135,13 +134,24 @@ html, body {
 	line-height:30px;
 	margin-left: 8px;
 	border-radius: 5px;
-	background-color:#912BD5;
 	font-size: 14px;
 	letter-spacing: 2px;
 	font-weight: 300;
 	text-align: center;
 	color:#ffffff;
 } 
+
+.information {
+    width: 80%;
+    left: 20%;
+    right: auto;
+    margin: 40px,10px,40px,10px;
+    font-size: 1.3em;
+    font-family: SimSun;
+}
+
+
+
 
 
 .button-group {

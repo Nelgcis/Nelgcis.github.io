@@ -1,6 +1,5 @@
 html, body {
 	margin: 0;
-	height: 100%;
 	width: 100%;
 }
 
@@ -52,7 +51,7 @@ html, body {
 }
 
 .area {
-    min-height: 200px;
+    min-height: 160px;
     max-height: 1600px;
     margin:50px;
     margin-left: 100px;
@@ -62,12 +61,11 @@ html, body {
     z-index: 999;
 }
 
-#k1{
+.area h1{
     height: 60px;
     text-align:left;
     position: relative;
     border-radius: 20px 20px 0 0;
-    background-color: rgba(92, 219, 255, 0.6);
 }
 
 
@@ -188,3 +186,15 @@ html, body {
 #myPageTop .column2{
 	padding-left: 25px;
 }
+
+
+
+#k1 {background-color: rgba(120, 195, 255, 0.6);}
+#k2 {background-color: rgba(248, 200, 74, 0.6);}
+#k3 {background-color: rgba(194, 138, 255, 0.6);}
+#k4 {background-color: rgba(101, 211, 57, 0.6);}
+#k5 {background-color: rgba(131, 201, 199, 0.6);}
+#k6 {background-color: rgba(222, 173, 138, 0.6);}
+#k7 {background-color: rgba(107, 230, 197, 0.6);}
+#k8 {background-color: rgba(255, 143, 193, 0.6);}
+#dk {background-color: rgba(255, 227, 41, 0.6);}

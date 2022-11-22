@@ -39,7 +39,8 @@ AMapLoader.load({
         linesearch.search(bID, function(status, result) {
             if (status === 'complete' && result.info === 'OK') {
                 lineInfo = result.lineInfo[0];
-                document.getElementById("station_name").innerHTML = lineInfo.start_stop + "\n" + lineInfo.end_stop;
+                document.getElementById("station_name").innerHTML = lineInfo.start_stop + "\r\n" + lineInfo.end_stop;
+                text.replace(/(\n|\r|\r\n|↵)/g, '<br/>')
                 document.getElementById("distance").innerHTML = lineInfo.distance.toString() + "km";
                 lineSearch_Callback(result);
             } else {

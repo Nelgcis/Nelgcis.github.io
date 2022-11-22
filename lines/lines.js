@@ -1,4 +1,4 @@
-
+var bID = document.getElementById("bus_id").innerHTML;
 
 AMapLoader.load({
     "key": "d5c95d0ecf90437341677b06888a405e",              // 申请好的Web端开发者Key，首次调用 load 时必填
@@ -12,14 +12,14 @@ AMapLoader.load({
         "version": '2.0'  // Loca 版本
     },
 }).then((AMap)=>{
-    var map = new AMap.Map("container", {
+    var map = new AMap.Map("bkg", {
         resizeEnable: true,
         showLabel: false, //不显示地图文字标记
         center: [116.397428, 39.90923],//地图中心点
         zoom: 15, //地图显示的缩放级别
         scrollWheel: false, //否可通过鼠标滚轮缩放浏览
         touchZoom: false, //在移动终端上是否可通过多点触控缩放浏览地图
-        dragEnable: true,
+        dragEnable: false,
         zoomEnable: false,
         doubleClickZoom: false,
         keyboardEnable: false,
@@ -35,42 +35,17 @@ AMapLoader.load({
             pageSize: 1,
             extensions: 'all'
         });
-
-        let bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
-        while(bus_id>=146 && bus_id<300 || bus_id>=699 && bus_id<801){bus_id = Math.floor(Math.random() * (999 - 1)) + 1;}
-        var bus_id_ok = "8";
-        bus_id_ok = bus_id.toString()+'路';
-        document.getElementById("heading_1a").innerHTML = bus_id.toString();
-        for(var i=0; i<100; i++)
-            {
-                document.getElementById("heading_1a").innerHTML = bus_id.toString();
-                linesearch.search(bus_id.toString()+'路', function(status, result) {
-                        if (status === 'complete' && result.info === 'OK') {
-                            bus_id_ok = bus_id.toString()+'路';
-                            i=101;
-                        } else {
-                            bus_id = Math.floor(Math.random() * (999 - 1)) + 1;
-                        }
-                })
-            }
-        
-        var lineInfo;        
-        
         //搜索“536”相关公交线路
-        linesearch.search(bus_id_ok, function(status, result) {
+        linesearch.search(bID, function(status, result) {
             if (status === 'complete' && result.info === 'OK') {
-                lineInfo = result.lineInfo[0];
-                console.log(lineInfo.company);
-                document.getElementById("station_tag").innerHTML = lineInfo.start_stop + " -> " + lineInfo.end_stop + " from " + lineInfo.stime + " to " + lineInfo.etime;
+                document.getElementById("station_name").innerHTML = lineInfo.start_stop + "\n" + lineInfo.end_stop;
+                document.getElementById("distance").innerHTML = lineInfo.distance.toString() + "km";
                 lineSearch_Callback(result);
             } else {
                 alert(result);
             }
         });
     }
-
-
-    
     /*公交路线查询服务返回数据解析概况*/
     function lineSearch_Callback(data) {
         var lineArr = data.lineInfo;
@@ -81,9 +56,8 @@ AMapLoader.load({
                 var pathArr = lineArr[i].path;
                 var stops = lineArr[i].via_stops;
                 var startPot = stops[0].location;
-                var startName = stops[0].name;
                 var endPot = stops[stops.length - 1].location;
-                console.log(startName);
+
                 if (i == 0) drawbusLine(startPot, endPot, pathArr);
             }
         }
@@ -91,7 +65,7 @@ AMapLoader.load({
     /*绘制路线*/
     function drawbusLine(startPot, endPot, BusArr) {
         //绘制起点，终点
-        /*new AMap.Marker({
+        new AMap.Marker({
             map: map,
             position: [startPot.lng, startPot.lat], //基点位置
             //icon: "http://webapi.amap.com/theme/v1.3/markers/n/start.png",
@@ -102,13 +76,13 @@ AMapLoader.load({
             position: [endPot.lng, endPot.lat], //基点位置
             //icon: "http://webapi.amap.com/theme/v1.3/markers/n/end.png",
             zIndex: 10
-        });*/
+        });
         //绘制乘车的路线
         busPolyline = new AMap.Polyline({
             map: map,
             path: BusArr,
-            strokeColor: "#8692F7",//线颜色*******************
-            strokeOpacity: 0.9,//线透明度
+            strokeColor: "#912BD5",//线颜色*******************
+            strokeOpacity: 0.8,//线透明度
             strokeWeight: 6//线宽
         });
         map.setFitView();

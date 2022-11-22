@@ -58,8 +58,24 @@ html, body {
     background-color: rgb(255, 255, 255);
     opacity: 0.2;
     border-radius: 20px;
-    position: absolute;
+    position: relative;
     z-index: 999;
+}
+
+#k1{
+    height: 80px;
+    text-align: center;
+    position: relative;
+    border-radius: 20px 20px 0 0;
+    background-color: #5cdbff;
+}
+
+
+.icon {
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    background-color: #5cdbff;
 }
 
 .button-group {

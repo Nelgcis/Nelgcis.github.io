@@ -58,6 +58,24 @@ html, body {
     z-index: 999;
 }
 
+
+#lines_info_list {
+	width: 100%;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fit, minmax(60px,1fr));
+	background-color: #c6d6e0;
+}
+
+#lines_info_list a {
+	font-size: 1em;
+	text-align: center;
+	margin: 10px;
+	font-family: "Noto Sans SC";
+}
+
+
+
 .map {
     margin: 50px;
     border-radius: 20px;
